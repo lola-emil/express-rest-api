@@ -1,0 +1,17 @@
+{
+  "name": "express-rest-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:lola-emil/express-rest-api.git",
+  "author": "StaleExam19 <staleexam19@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.18.2",
+    "knex": "^2.5.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
