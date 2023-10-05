@@ -1,9 +1,11 @@
 import { Handler, NextFunction, Request, Response } from "express";
 
-export default function handlerWrapper(handler: Handler) {
-    return (req: Request, res: Response, next: NextFunction) => {
+type AsyncHandler = (req: Request, res: Response) => Promise<void>
+
+export default function handlerWrapper(handler: AsyncHandler) {
+    return async (req: Request, res: Response, next: NextFunction) => {
         try {
-            handler(req, res, next);
+            await handler(req, res);
         } catch (error) {
             next(error);
         }
